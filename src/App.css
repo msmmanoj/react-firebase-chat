@@ -135,13 +135,21 @@ p {
   flex-direction: row-reverse;
 }
 
-.sent p {
+.sent div {
   color: white;
+  padding: .60em;
+  margin: .5em;
+  border-radius: 1em;
   background: #0b93f6;
+  overflow: hidden;
   align-self: flex-end;
 }
-.received p {
+.received div {
+  padding: .60em;
+  margin: .5em;
+  border-radius: 1em;
   background: #e5e5ea;
+  overflow: hidden;
   color: black;
 }
 
