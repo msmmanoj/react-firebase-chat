@@ -7,6 +7,9 @@ on:
     branches:
       - master
 
+env:
+  REACT_APP_API_KEY: ${{secrets.API_KEY}}
+
 jobs:
   build:
     runs-on: ubuntu-latest
