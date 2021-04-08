@@ -71,7 +71,7 @@ function UsersPortal(props) {
 
     const users_query = firestore.collection("users").orderBy("createdAt")
     const [users] = useCollectionData(users_query, {idField: 'id'});
-    console.log(process.env.REACT_APP_API_KEY)
+
     const selectUser = (e) => {
         props.selectPerson(e.target.value)
     }
