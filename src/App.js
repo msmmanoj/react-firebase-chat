@@ -24,7 +24,7 @@ function App() {
                 <SignOut/>
             </header>
             <section>
-                {user ? person === '' ? <UsersPortal selectPerson={selectPerson}/> : <ChatRoom person={person}/> :
+                {user ? person === '' ? <UsersPortal selectPerson={selectPerson}/> : <ChatRoom person={person} selectPerson={selectPerson}/> :
                     <SignIn/>}
             </section>
         </div>
@@ -122,6 +122,10 @@ function ChatRoom(props) {
         dummy.current.scrollIntoView({behavior: 'smooth'})
     }
 
+    const onSelectBack = () => {
+        props.selectPerson('')
+    }
+
     return (
         <>
             <main>
@@ -131,6 +135,7 @@ function ChatRoom(props) {
                 <div ref={dummy}/>
             </main>
             <form onSubmit={sendMessage} className="form">
+                <button onClick={onSelectBack}><i className="material-icons">arrow_back</i></button>
                 <input value={formValue} onChange={(e) => setFormValue(e.target.value)}/>
                 <button type="submit"><i className="material-icons">send</i></button>
             </form>
